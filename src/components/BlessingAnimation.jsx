@@ -4,22 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Heart } from 'lucide-react';
 
 export function BlessingAnimation() {
-  const [blessings] = useState([{
-    name: '张三',
-    message: '祝你们永浴爱河，白头偕老！'
-  }, {
-    name: '李四',
-    message: '恭喜新婚，幸福美满！'
-  }, {
-    name: '王五',
-    message: '愿你们的爱情如美酒般醇香！'
-  }, {
-    name: '赵六',
-    message: '祝福新人，百年好合！'
-  }, {
-    name: '钱七',
-    message: '爱情甜蜜，生活美满！'
-  }]);
+  const [blessings] = useState(['祝你们永浴爱河，白头偕老！', '恭喜新婚，幸福美满！', '愿你们的爱情如美酒般醇香！', '祝福新人，百年好合！', '爱情甜蜜，生活美满！', '永结同心，幸福永远！', '相亲相爱，永浴爱河！', '天作之合，佳偶天成！']);
   const [hearts, setHearts] = useState([]);
   useEffect(() => {
     // 爱心生成器
@@ -57,14 +42,13 @@ export function BlessingAnimation() {
       }} />
         </div>)}
 
-      {/* 飘动祝福文字 */}
+      {/* 飘动祝福文字 - 移除人名 */}
       {blessings.map((blessing, index) => <div key={index} className="absolute text-white text-sm bg-blue-600/80 backdrop-blur-sm px-3 py-2 rounded-full shadow-lg animate-blessing-float" style={{
-      left: `${20 + index * 15}%`,
-      animationDuration: `${8 + index * 2}s`,
-      animationDelay: `${index * 0.5}s`
+      left: `${15 + index * 12}%`,
+      animationDuration: `${8 + index * 1.5}s`,
+      animationDelay: `${index * 0.3}s`
     }}>
-          <span className="font-bold text-blue-100">{blessing.name}：</span>
-          {blessing.message}
+          {blessing}
         </div>)}
     </div>;
 }
