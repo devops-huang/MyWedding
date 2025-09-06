@@ -8,6 +8,7 @@ import { Calendar, MapPin, Mail, Phone, Sparkles, Heart } from 'lucide-react';
 import { WeddingHeader } from '@/components/WeddingHeader';
 import { NavigationTabs } from '@/components/NavigationTabs';
 import { PhotoGallery } from '@/components/PhotoGallery';
+import { BlessingAnimation } from '@/components/BlessingAnimation';
 export default function WeddingInvitation(props) {
   const {
     $w
@@ -22,8 +23,8 @@ export default function WeddingInvitation(props) {
   const weddingInfo = {
     bride: '张美丽',
     groom: '李英俊',
-    date: '2025年10月1日',
-    time: '下午2点',
+    date: '2025年10月3日',
+    time: '下午14:30',
     location: '深蓝之谜动感宴会厅',
     address: '北京市朝阳区星光大道88号',
     phone: '138-8888-8888',
@@ -157,7 +158,7 @@ export default function WeddingInvitation(props) {
           </div>
 
           <div>
-            <h3 className="text-极速快车xl font-bold mb-4 text-blue-200 font-yahei">👔 着装要求</h3>
+            <h3 className="text-2xl font-bold mb-4 text-blue-200 font-yahei">👔 着装要求</h3>
             <p className="leading-relaxed font-yahei">
               请着正装出席，建议女士穿蓝色或银色礼服，男士穿深色西装。
               让我们一起营造深蓝之谜的浪漫氛围。
@@ -166,16 +167,19 @@ export default function WeddingInvitation(props) {
         </div>
       </div>
     </div>;
-  const renderBlessings = () => <div className="min极速快车-h-screen bg-gradient-to-b from-blue-900 to-purple-900 pt-8 px-6">
+  const renderBlessings = () => <div className="min-h-screen bg-gradient-to-b from-blue-900 to-purple-900 pt-8 px-6 relative overflow-hidden">
+      {/* 飘动祝福和爱心动画 */}
+      <BlessingAnimation />
+      
       <WeddingHeader title="送上祝福" subtitle="分享您的祝福与喜悦" />
       
-      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 relative z-20">
         <form onSubmit={handleBlessingSubmit} className="space-y-6">
           <div>
             <label className="block text-blue-200 text-sm font-medium mb-2 font-yahei">
               您的姓名
             </label>
-            <input type="text" value={name} onChange={e => setName(e.target.value)} className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg极速快车 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all font-yahei" placeholder="请输入您的姓名" />
+            <input type="text" value={name} onChange={e => setName(e.target.value)} className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all font-yahei" placeholder="请输入您的姓名" />
           </div>
           
           <div>
@@ -209,8 +213,8 @@ export default function WeddingInvitation(props) {
         </div>
 
         <div className="bg-blue-800/30 rounded-lg p-6 mb-6 text-center">
-          <MapPin className="w-12 h-12 mx-auto mb-3极速快车 text-blue-300" />
-          <p className="text-blue-200 font-极速快车yahei">地图导航</p>
+          <MapPin className="w-12 h-12 mx-auto mb-3 text-blue-300" />
+          <p className="text-blue-200 font-yahei">地图导航</p>
         </div>
 
         <button onClick={handleNavigation} className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 px-6 rounded-lg font-medium hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 mb-6 font-yahei">

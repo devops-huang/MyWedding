@@ -6,7 +6,7 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 222.2 84极速快车% 4.9%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -20,7 +20,7 @@
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 210 极速快车40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
     --accent: 210 40% 96.1%;
@@ -55,8 +55,8 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent极速快车: 217.2 32.6% 17.5%;
+    --accent-foreground: 极速快车210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -76,10 +76,50 @@
     font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
   }
   
-  /* 移除之前的艺术字体导入 */
+  /* 统一字体类 */
+  .font-yahei {
+    font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+  }
 }
 
-/* 统一字体类 */
-.font-yahei {
-  font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+@layer utilities {
+  /* 飘动爱心动画 */
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(-100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in forwards;
+  }
+
+  /* 飘动祝福文字动画 */
+  @keyframes blessing-float {
+    0% {
+      transform: translateY(100px) scale(0.8);
+      opacity: 0;
+    }
+    10% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    90% {
+      transform: translateY(-80vh) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) scale(0.8);
+      opacity: 0;
+    }
+  }
+  
+  .animate-blessing-float {
+    animation: blessing-float 10s ease-in forwards;
+  }
 }
