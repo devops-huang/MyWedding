@@ -2,3 +2,5 @@ export * from './WeddingHeader.jsx';
 export * from './NavigationTabs.jsx';
 export * from './PhotoGallery.jsx';
 export * from './BlessingAnimation.jsx';
+export * from './ResponsiveGrid.jsx';
+export * from './ResponsiveText.jsx';
